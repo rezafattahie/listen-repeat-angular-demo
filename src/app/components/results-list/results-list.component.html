@@ -1,0 +1,43 @@
+<div class="bg-white rounded-2xl shadow p-5 border border-slate-100">
+    <div class="flex items-center justify-between">
+        <div class="text-sm font-medium">Results</div>
+        <button class="rounded-xl border px-3 py-2 transition hover:bg-slate-100 hover:cursor-pointer"
+            (click)="vm.resetResults()">
+            Clear
+        </button>
+    </div>
+
+    @if (vm.results().length === 0) {
+    <div class="text-sm text-slate-500 mt-3">No results yet. Speak after a sentence plays.</div>
+    } @else {
+    <div class="grid gap-3 mt-3">
+        @for (r of vm.results(); track r.createdAt) {
+        <div class="rounded-xl border p-4">
+            <div class="flex items-center justify-between gap-3">
+                <div class="text-sm font-medium">Sentence #{{ r.index + 1 }}</div>
+
+                <div class="text-sm font-semibold px-2 py-1 rounded-lg" [ngClass]="
+                r.score >= 0.8 ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' :
+                r.score >= 0.5 ? 'bg-amber-50 text-amber-700 border border-amber-200' :
+                'bg-rose-50 text-rose-700 border border-rose-200'
+              ">
+                    {{ (r.score * 100) | number : "1.0-0" }}%
+                </div>
+            </div>
+
+            <div class="mt-3 grid gap-2">
+                <div>
+                    <div class="text-xs text-slate-500">Expected</div>
+                    <div class="text-sm">{{ r.expected }}</div>
+                </div>
+
+                <div>
+                    <div class="text-xs text-slate-500">Heard</div>
+                    <div class="text-sm">{{ r.spoken || "—" }}</div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    }
+</div>

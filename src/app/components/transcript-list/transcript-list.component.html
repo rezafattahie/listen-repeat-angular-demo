@@ -1,0 +1,25 @@
+<div class="bg-white rounded-2xl shadow p-5 border border-slate-100">
+    <div class="text-sm font-medium mb-3">Transcript</div>
+
+    <div class="grid gap-2">
+        @for (sent of session.sentences; track $index) {
+        <button class="text-left rounded-xl border p-3" [ngClass]="vm.idx() === $index
+          ? 'bg-black text-white border-black cursor-default'
+          : 'hover:bg-gray-100 hover:text-gray-600 hover:cursor-pointer'" (click)="vm.select($index)">
+            <div class="font-medium">{{ sent.text }}</div>
+
+            <div class="text-xs opacity-80 mt-1">
+                @if (vm.translationMode() === "fa") {
+                <span>FA: {{ sent.fa }}</span>
+                } @else {
+                <span>EN: {{ sent.eng }}</span>
+                }
+            </div>
+
+            <div class="text-[11px] opacity-70 mt-1">
+                start: {{ sent.start }}s • dur: {{ sent.duration }}s
+            </div>
+        </button>
+        }
+    </div>
+</div>

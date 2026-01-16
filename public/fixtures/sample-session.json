@@ -1,0 +1,28 @@
+{
+  "title": "Sample Session (DE)",
+  "audioFile": "/audio/sample.wav",
+  "lang": "de-DE",
+  "sentences": [
+    {
+      "start": 0.0,
+      "duration": 1.2,
+      "text": "Hallo! Wie geht es dir?",
+      "fa": "سلام! حالت چطوره؟",
+      "eng": "Hi! How are you?"
+    },
+    {
+      "start": 1.4,
+      "duration": 1.4,
+      "text": "Ich lerne Angular in Deutschland.",
+      "fa": "من در آلمان آنگولار یاد می‌گیرم.",
+      "eng": "I learn Angular in Germany."
+    },
+    {
+      "start": 3.1,
+      "duration": 1.6,
+      "text": "Heute übe ich Listen and Repeat.",
+      "fa": "امروز Listen and Repeat تمرین می‌کنم.",
+      "eng": "Today I practice listen and repeat."
+    }
+  ]
+}

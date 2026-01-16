@@ -1,0 +1,29 @@
+<div class="bg-white rounded-2xl shadow p-5 border border-slate-100">
+    <div class="text-sm text-slate-600 mb-2">Current sentence</div>
+
+    @if (vm.currentSentence(); as cur) {
+    <div class="text-xl font-semibold">{{ cur.text }}</div>
+
+    <div class="text-sm text-slate-700 mt-2">
+        @if (vm.translationMode() === "fa") {
+        <span>FA: {{ cur.fa }}</span>
+        } @else {
+        <span>EN: {{ cur.eng }}</span>
+        }
+    </div>
+
+    <div class="text-xs text-slate-500 mt-2">
+        start: {{ cur.start }}s • dur: {{ cur.duration }}s
+    </div>
+
+    <div class="mt-3 grid gap-2">
+        <div class="text-xs text-slate-500">Partial</div>
+        <div class="border rounded-lg p-2 min-h-10">{{ vm.partial() }}</div>
+
+        <div class="text-xs text-slate-500">Final</div>
+        <div class="border rounded-lg p-2 min-h-10">{{ vm.finalText() }}</div>
+    </div>
+    } @else {
+    <div class="text-sm text-slate-500">No sentence selected.</div>
+    }
+</div>

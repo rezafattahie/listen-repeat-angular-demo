@@ -1,0 +1,28 @@
+<div class="min-h-screen bg-slate-50 text-slate-900 p-4 sm:p-6">
+  <div class="max-w-5xl mx-auto space-y-4">
+    <div class="bg-white rounded-2xl shadow p-5 border border-slate-100">
+      <h1 class="text-2xl font-semibold">Listen & Repeat (Demo)</h1>
+      <p class="text-sm text-slate-600 mt-1">
+        Local fixtures, no backend. Plays sentence segments + mic window + accuracy scoring.
+      </p>
+    </div>
+
+    @if (vm.session(); as s) {
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div class="space-y-4">
+        <controls-panel [vm]="vm"></controls-panel>
+        <current-sentence-card [vm]="vm"></current-sentence-card>
+      </div>
+
+      <div class="space-y-4">
+        <transcript-list [vm]="vm" [session]="s"></transcript-list>
+        <results-list [vm]="vm"></results-list>
+      </div>
+    </div>
+    } @else {
+    <div class="bg-white rounded-2xl shadow p-5">Loading fixture...</div>
+    }
+  </div>
+</div>
+
+<audio #audioEl [src]="vm.session()?.audioFile ?? ''" preload="auto"></audio>
