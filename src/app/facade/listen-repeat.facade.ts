@@ -1,4 +1,4 @@
-import { Injectable, ElementRef, signal, computed } from "@angular/core";
+import { Injectable, signal, computed } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { SegmentAudioPlayerService } from "../services/segment-audio-player.service";
 import { SpeechRecognitionService } from "../services/speech-recognition.service";

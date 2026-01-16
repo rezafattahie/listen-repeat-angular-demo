@@ -7,6 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:ci": "ng test --watch=false",
+    "test:watch": "ng test --watch=true",
     "gen:audio": "node tools/generate-sample-audio.mjs"
   },
   "prettier": {
