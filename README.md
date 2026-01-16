@@ -108,7 +108,7 @@ docs/
   decisions.md                     # Key technical decisions
   fixtures.md                      # Fixture format and examples
   testing.md                       # Testing plan
-
+```
 ---
 
 ## Roadmap
