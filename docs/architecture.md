@@ -39,3 +39,11 @@ This demo is structured around a single stateful facade and small UI components.
 - Keeps UI files small and readable
 - Keeps orchestration logic in a single place
 - Makes unit testing straightforward
+
+```md
+## PWA
+
+PWA support is enabled via Angular Service Worker:
+- `ngsw-config.json` defines caching rules
+- `manifest.webmanifest` enables installability
+```

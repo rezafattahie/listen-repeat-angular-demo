@@ -12,6 +12,7 @@ A focused **portfolio demo** showcasing a “Listen & Repeat” learning flow:
 
 ## Features
 
+- **PWA** (installable) with Angular Service Worker
 - **Segment playback** (start + duration per sentence)
 - **Auto mic timing**
   - *Time until mic starts* (ratio × sentence duration)
@@ -84,6 +85,22 @@ The fixture references audio like this:
 
 SpeechRecognition works best in **Chrome**.
 If speech is not supported, the UI will show a warning and the scoring will be limited.
+
+---
+
+## PWA / Offline
+
+This app is PWA-enabled and can be installed.
+
+To test Service Worker caching and installability, use a production build:
+
+```bash
+npm run build
+npx http-server dist
+```
+Then open the served URL in Chrome and check:
+- Application → Service Workers
+- Install prompt (or “Install” icon in the address bar)
 
 ---
 

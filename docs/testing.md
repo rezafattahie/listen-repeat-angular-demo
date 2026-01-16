@@ -21,3 +21,9 @@ This project uses the Angular testing setup (Vitest via `ng test`).
 
 - Transcript list: active item styling, click triggers selection
 - Controls: buttons disabled/enabled states
+- 
+## PWA Smoke Test (Manual)
+
+- Build production and serve `dist/`
+- Verify Service Worker is active
+- Reload while offline (fixtures should still load if cached)

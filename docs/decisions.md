@@ -1,5 +1,11 @@
 # Decisions
 
+## Why PWA?
+
+PWA is included to demonstrate production-ready delivery:
+- Installable app shell
+- Offline caching of static assets and local fixtures (configurable)
+
 ## Why async/await for playback orchestration?
 
 The core flow is sequential:
