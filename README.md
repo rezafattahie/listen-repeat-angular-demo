@@ -156,7 +156,3 @@ docs/
 </p>
 
 ---
-
-## License
-
-MIT
